@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Item</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <h2 class="my-4">Update Item</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <div class="form-group">
+            <label for="name">Item Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ item[1] }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="style">Style</label>
+            <input type="text" class="form-control" id="style" name="style" value="{{ item[2] }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mfg">Manufacturer</label>
+            <input type="text" class="form-control" id="mfg" name="mfg" value="{{ item[3] }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ct">Carat</label>
+            <input type="text" class="form-control" id="ct" name="ct" value="{{ item[4] }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" id="price" name="price" value="{{ item[5] }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="type">Type</label>
+            <input type="text" class="form-control" id="type" name="type" value="{{ item[6] }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="subtype">Subtype</label>
+            <input type="text" class="form-control" id="subtype" name="subtype" value="{{ item[7] }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="shape">Shape</label>
+            <input type="text" class="form-control" id="shape" name="shape" value="{{ item[8] }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="size">Size</label>
+            <input type="text" class="form-control" id="size" name="size" value="{{ item[9] }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="image1">Image 1 URL</label>
+            <input type="text" class="form-control" id="image1" name="image1" value="{{ item[10] }}">
+        </div>
+
+        <div class="form-group">
+            <label for="image2">Image 2 URL</label>
+            <input type="text" class="form-control" id="image2" name="image2" value="{{ item[11] }}">
+        </div>
+
+        <div class="form-group">
+            <label for="image3">Image 3 URL</label>
+            <input type="text" class="form-control" id="image3" name="image3" value="{{ item[12] }}">
+        </div>
+
+        <div class="form-group">
+            <label for="image4">Image 4 URL</label>
+            <input type="text" class="form-control" id="image4" name="image4" value="{{ item[13] }}">
+        </div>
+
+        <div class="form-group">
+            <label for="image5">Image 5 URL</label>
+            <input type="text" class="form-control" id="image5" name="image5" value="{{ item[14] }}">
+        </div>
+
+        <div class="form-group">
+            <label for="image6">Image 6 URL</label>
+            <input type="text" class="form-control" id="image6" name="image6" value="{{ item[15] }}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Item</button>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+</body>
+</html>
